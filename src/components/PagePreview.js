@@ -25,14 +25,20 @@ function PagePreview() {
     <Container maxWidth="lg">
       <Box my={4}>
         <Button 
-          variant="outlined" 
-          onClick={() => navigate('/')}
-          sx={{ mb: 3 }}
-          startIcon={<ArrowBackIcon />}
-        >
-          Back to Dashboard
-        </Button>
-        
+         variant="contained" 
+         onClick={() => navigate('/')}
+         sx={{ 
+         mb: 3,
+         backgroundColor: 'black',
+         color: 'white',
+         '&:hover': {
+         backgroundColor: '#333'
+        }
+       }}
+        startIcon={<ArrowBackIcon />}
+     >
+      Back to Dashboard
+    </Button>
         {/* Replace the JSON rendering with PageRenderer */}
         <PageRenderer config={pageConfig} />
       </Box>

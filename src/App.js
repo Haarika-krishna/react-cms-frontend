@@ -5,7 +5,7 @@ import SectionBuilder from './components/SectionBuilder';
 import PagePreview from './components/PagePreview'; // New component
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Box, Typography, Button ,Container} from '@mui/material';
-
+import LandingPage from './pages/LandingPage';
 
 const CMSInterface = ({ config, updateConfig, resetConfig }) => {
   const navigate = useNavigate();
@@ -38,13 +38,20 @@ const CMSInterface = ({ config, updateConfig, resetConfig }) => {
     <Container maxWidth="lg">
       <Box my={4}>
         <Button 
-          variant="outlined" 
-          onClick={() => navigate('/')}
-          sx={{ mb: 3 }}
-          startIcon={<ArrowBackIcon />}
-        >
-          Back to Dashboard
-        </Button>
+         variant="contained" 
+         onClick={() => navigate('/')}
+         sx={{ 
+         mb: 3,
+         backgroundColor: 'black',
+         color: 'white',
+         '&:hover': {
+         backgroundColor: '#333'
+        }
+       }}
+        startIcon={<ArrowBackIcon />}
+     >
+      Back to Dashboard
+    </Button>
         
         <Typography variant="h4" gutterBottom>Page Builder</Typography>
         
@@ -94,7 +101,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AdminPage />} />
+       <Route path="/" element={<LandingPage />} />
         <Route path="/builder" element={
           <CMSInterface 
             config={config} 

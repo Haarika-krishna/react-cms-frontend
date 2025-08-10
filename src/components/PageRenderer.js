@@ -3,7 +3,7 @@ import { Box, Typography, Button, Container, Paper } from '@mui/material';
 
 const componentMap = {
   header: ({ title, logo, navLinks }) => (
-    <header style={{ backgroundColor: '#f5f5f5', padding: '1rem' }}>
+    <header style={{ backgroundColor: 'black', padding: '1rem' }}>
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Typography variant="h4">{title}</Typography>
         {logo && <img src={logo} alt="Logo" height="40" />}

@@ -24,13 +24,25 @@ const HeaderEditor = ({ props, onUpdate }) => {
   };
 
   return (
-    <Box>
+    <Box sx={{
+      backgroundColor: 'transparent', // Fully transparent
+      padding: 2,
+      marginBottom: 2
+    }}>
       <TextField
         label="Header Title"
         value={props.title || ''}
         onChange={(e) => onUpdate({ ...props, title: e.target.value })}
         fullWidth
         margin="normal"
+        sx={{
+          '& .MuiInputBase-input': { color: 'black' },
+          '& .MuiInputLabel-root': { color: 'black' },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': { borderColor: 'rgba(0,0,0,0.23)' },
+            '&:hover fieldset': { borderColor: 'rgba(0,0,0,0.5)' }
+          }
+        }}
       />
       <TextField
         label="Logo URL"
@@ -38,27 +50,52 @@ const HeaderEditor = ({ props, onUpdate }) => {
         onChange={(e) => onUpdate({ ...props, logo: e.target.value })}
         fullWidth
         margin="normal"
+        sx={{
+          '& .MuiInputBase-input': { color: 'black' },
+          '& .MuiInputLabel-root': { color: 'black' }
+        }}
       />
       
-      <Typography variant="subtitle2" mt={2}>Navigation Links</Typography>
+      <Typography variant="subtitle2" mt={2} sx={{ color: 'black' }}>
+        Navigation Links
+      </Typography>
+      
       {props.navLinks?.map((link, index) => (
         <Box key={index} display="flex" alignItems="center" gap={1} mb={1}>
           <TextField
             label="Label"
             value={link.label}
             onChange={(e) => handleLinkChange(index, 'label', e.target.value)}
+            sx={{
+              '& .MuiInputBase-input': { color: 'black' },
+              '& .MuiInputLabel-root': { color: 'black' }
+            }}
           />
           <TextField
             label="URL"
             value={link.url}
             onChange={(e) => handleLinkChange(index, 'url', e.target.value)}
+            sx={{
+              '& .MuiInputBase-input': { color: 'black' },
+              '& .MuiInputLabel-root': { color: 'black' }
+            }}
           />
           <IconButton onClick={() => removeLink(index)}>
-            <RemoveIcon fontSize="small" />
+            <RemoveIcon fontSize="small" sx={{ color: 'black' }} />
           </IconButton>
         </Box>
       ))}
-      <Button onClick={addLink} startIcon={<AddIcon />} size="small">
+      
+      <Button 
+        onClick={addLink} 
+        startIcon={<AddIcon sx={{ color: 'black' }} />} 
+        size="small"
+        sx={{ 
+          color: 'black',
+          border: '1px solid rgba(0,0,0,0.5)',
+          mt: 1
+        }}
+      >
         Add Link
       </Button>
     </Box>

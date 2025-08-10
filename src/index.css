@@ -5,6 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+   background: linear-gradient(135deg, #3f51b5 0%, #9c27b0 100%);
+  /* Adjust colors to match your theme.palette.primary/main values */
+  background-attachment: fixed; /* Ensures gradient covers entire scroll area */
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  
 }
 
 code {
